@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clReg"
         android:layout_width="match_parent"
@@ -28,7 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfile">
-
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edEmail"
@@ -41,7 +39,6 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
-            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -57,10 +54,25 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
-            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edEmail"
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/ed_pass"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:textColorHint="@color/ed_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edUserName"
             tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -73,10 +85,9 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
-            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edUserName"
+            app:layout_constraintTop_toBottomOf="@+id/edPass"
             tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -89,7 +100,6 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
-            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edFirstName"
@@ -101,16 +111,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/ed_age"
+            android:inputType="number"
             android:maxLines="1"
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
-            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edLastName"
             tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSave"
