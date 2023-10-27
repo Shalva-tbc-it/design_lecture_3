@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">design</string>
+    <string name="profile">Profile Info</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+    <string name="ed_email">Email</string>
+    <string name="ed_user_name">User Name</string>
+    <string name="ed_firs_name">Firs Name</string>
+    <string name="ed_last_name">Last Name</string>
+    <string name="ed_age">Age</string>
+</resources>
