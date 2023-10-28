@@ -20,9 +20,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clReg"
+        android:id="@+id/constraintInputs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,9 +66,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/ed_pass"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:minHeight="48dp"
-            android:inputType="textPassword"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/ed_firs_name"
+            android:hint="@string/ed_first_name"
             android:maxLines="1"
             android:minHeight="48dp"
             android:paddingStart="15dp"
@@ -144,6 +145,19 @@
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/btnSave"
             tools:ignore="VisualLintButtonSize" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfile">
+
+        
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
