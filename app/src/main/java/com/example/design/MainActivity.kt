@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var firstName: EditText
     private lateinit var lastName: EditText
     private lateinit var age: EditText
-    private var info: Info? = null
+    private lateinit var info: Info
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,16 +49,24 @@ class MainActivity : AppCompatActivity() {
             }else if (firstName.text.isBlank() || lastName.text.isBlank() || age.text.isBlank()) {
                 Toast.makeText(this, "first name Error", Toast.LENGTH_LONG).show()
             }else {
-                info?.email = email.text.toString()
-                info?.userName = userName.text.toString()
-                info?.password = password.text.toString()
-                info?.firstName = firstName.text.toString()
-                info?.lastName = lastName.text.toString()
-                info?.age = age.text.toString().toInt()
+
+                val info = Info(
+                    email = email.text.toString(),
+                    userName = userName.text.toString(),
+                    password = password.text.toString(),
+                    firstName = firstName.text.toString(),
+                    lastName = lastName.text.toString(),
+                    age = age.text.toString()
+                    )
 
                 binding.constraintInputs.isVisible = false
+                binding.constraintInfo.isVisible = true
 
-
+                binding.tvEmailValue.text = info.email
+                binding.tvUserNameValue.text = info.userName
+                binding.tvPassValue.text = info.password
+                binding.tvFullNameValue.text = info.firstName + " " + info.lastName
+                binding.tvAgeValue.text = info.age
 
             }
         }
@@ -73,6 +81,28 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        binding.btnAgain.setOnClickListener {
+
+            binding.constraintInputs.isVisible = true
+            binding.constraintInfo.isVisible = false
+
+            Info(
+                email = "",
+                userName = "",
+                password = "",
+                firstName = "",
+                lastName = "",
+                age = ""
+            )
+
+            email.text.clear()
+            userName.text.clear()
+            password.text.clear()
+            firstName.text.clear()
+            lastName.text.clear()
+            age.text.clear()
+
+        }
 
     }
 
@@ -106,5 +136,5 @@ data class Info(
     var password: String,
     var firstName: String,
     var lastName: String,
-    var age: Int,
+    var age: String,
 )

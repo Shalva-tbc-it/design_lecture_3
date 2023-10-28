@@ -23,7 +23,6 @@
         android:id="@+id/constraintInputs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,18 +145,149 @@
             app:layout_constraintStart_toEndOf="@+id/btnSave"
             tools:ignore="VisualLintButtonSize" />
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintInfo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:padding="20dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfile">
 
-        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ed_email"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="120dp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmailValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@id/guidelineInfo"
+            app:layout_constraintTop_toTopOf="@+id/tvEmail"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ed_user_name"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@id/guidelineInfo"
+            app:layout_constraintTop_toTopOf="@id/tvUserName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ed_pass"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@id/guidelineInfo"
+            app:layout_constraintTop_toTopOf="@id/tvPass"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ed_full_name"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPass"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFullNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@id/guidelineInfo"
+            app:layout_constraintTop_toTopOf="@id/tvFullName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ed_age"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFullName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAgeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@id/guidelineInfo"
+            app:layout_constraintTop_toTopOf="@id/tvAge"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/again"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

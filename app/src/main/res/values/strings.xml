@@ -3,10 +3,12 @@
     <string name="profile">Profile Info</string>
     <string name="save">Save</string>
     <string name="clear">Clear</string>
-    <string name="ed_email"><i>Email</i></string>
-    <string name="ed_user_name"><i>User Name</i></string>
-    <string name="ed_pass"><i>Password</i></string>
-    <string name="ed_first_name"><i>Firs Name</i></string>
-    <string name="ed_last_name"><i>Last Name</i></string>
-    <string name="ed_age"><i>Age</i></string>
+    <string name="ed_email">Email</string>
+    <string name="ed_user_name">User Name</string>
+    <string name="ed_pass">Password</string>
+    <string name="ed_first_name">Firs Name</string>
+    <string name="ed_last_name">Last Name</string>
+    <string name="ed_full_name">Full Name</string>
+    <string name="ed_age">Age</string>
+    <string name="again">Again</string>
 </resources>
