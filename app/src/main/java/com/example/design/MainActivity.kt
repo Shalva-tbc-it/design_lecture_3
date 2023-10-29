@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.text.InputType
 import android.text.TextUtils
 import android.util.Patterns
-import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -45,14 +44,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSave.setOnClickListener {
             if (!isValidEmail(email.text)) {
-                Toast.makeText(this, "Enter your email correctly", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this, "Enter your email correctly", Toast.LENGTH_LONG).show()
             } else if (!isValidUserName(userName.text.toString())) {
-                Toast.makeText(this, "Username must be at least 10 characters long", Toast.LENGTH_LONG).show()
-            }else if (!isStrongPassword(password.text.toString())) {
-                Toast.makeText(this, "Invalid password format. (Xxxx123@)", Toast.LENGTH_LONG).show()
-            }else if (firstName.text.isBlank() || lastName.text.isBlank() || age.text.isBlank()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_LONG).show()
-            }else {
+                Toast.makeText(
+                    this, "Username must be at least 10 characters long", Toast.LENGTH_LONG).show()
+            } else if (!isStrongPassword(password.text.toString())) {
+                Toast.makeText(
+                    this, "Invalid password format. (Xxxx123@)", Toast.LENGTH_LONG).show()
+            } else if (firstName.text.isBlank() || lastName.text.isBlank() || age.text.isBlank()) {
+                Toast.makeText(
+                    this, "Please fill in all fields", Toast.LENGTH_LONG).show()
+            } else {
 
                 info = Info(
                     email = email.text.toString(),
@@ -61,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     firstName = firstName.text.toString(),
                     lastName = lastName.text.toString(),
                     age = age.text.toString()
-                    )
+                )
 
                 binding.constraintInputs.isVisible = false
                 binding.constraintInfo.isVisible = true
@@ -101,13 +104,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.imgBtnShowPass.setOnClickListener {
             if (!passwordVisibility) {
-                binding.edPass.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.edPass.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                 passwordVisibility = true
-            }else {
-                binding.edPass.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            } else {
+                binding.edPass.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
                 passwordVisibility = false
             }
-
 
 
         }
@@ -138,11 +142,3 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-data class Info(
-    var email: String,
-    var userName: String,
-    var password: String,
-    var firstName: String,
-    var lastName: String,
-    var age: String,
-)
