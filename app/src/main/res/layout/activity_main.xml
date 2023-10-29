@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/profile"
         android:textSize="25sp"
+        android:textColor="@color/black"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +24,7 @@
         android:id="@+id/constraintInputs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +38,7 @@
             android:hint="@string/ed_email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:textColor="@color/black"
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
@@ -50,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/ed_user_name"
+            android:textColor="@color/black"
             android:maxLines="1"
             android:minHeight="48dp"
             android:paddingStart="15dp"
@@ -66,6 +70,7 @@
             android:layout_marginTop="20dp"
             android:hint="@string/ed_pass"
             android:inputType="textPassword"
+            android:textColor="@color/black"
             android:maxLines="1"
             android:minHeight="48dp"
             android:paddingStart="15dp"
@@ -75,6 +80,16 @@
             app:layout_constraintTop_toBottomOf="@+id/edUserName"
             tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imgBtnShowPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_eye"
+            app:layout_constraintBottom_toBottomOf="@+id/edPass"
+            app:layout_constraintEnd_toEndOf="@+id/edPass"
+            app:layout_constraintTop_toTopOf="@+id/edPass" />
+
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edFirstName"
             android:layout_width="match_parent"
@@ -82,6 +97,7 @@
             android:layout_marginTop="20dp"
             android:hint="@string/ed_first_name"
             android:maxLines="1"
+            android:textColor="@color/black"
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
@@ -95,6 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
             android:hint="@string/ed_last_name"
             android:maxLines="1"
             android:minHeight="48dp"
@@ -110,10 +127,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
             android:hint="@string/ed_age"
             android:inputType="number"
             android:maxLines="1"
             android:minHeight="48dp"
+            android:maxLength="2"
             android:paddingStart="15dp"
             android:textColorHint="@color/ed_hint"
             app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +165,6 @@
             tools:ignore="VisualLintButtonSize" />
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -167,13 +185,15 @@
             android:text="@string/ed_email"
             android:textSize="20sp"
             android:textStyle="bold|italic"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="120dp" />
 
@@ -182,99 +202,108 @@
             android:id="@+id/tvEmailValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text=""
             android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="@id/guidelineInfo"
-            app:layout_constraintTop_toTopOf="@+id/tvEmail"/>
+            app:layout_constraintTop_toTopOf="@+id/tvEmail" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ed_user_name"
             android:layout_marginTop="10dp"
+            android:text="@string/ed_user_name"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmail"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvUserNameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="20sp"
             android:layout_marginEnd="20dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="@id/guidelineInfo"
-            app:layout_constraintTop_toTopOf="@id/tvUserName"/>
+            app:layout_constraintTop_toTopOf="@id/tvUserName" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPass"
             android:layout_width="wrap_content"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/ed_pass"
             android:textSize="20sp"
-            android:layout_marginTop="10dp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvUserName"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPassValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
             android:text=""
             android:textSize="20sp"
-            android:layout_marginEnd="20dp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="@id/guidelineInfo"
-            app:layout_constraintTop_toTopOf="@id/tvPass"/>
+            app:layout_constraintTop_toTopOf="@id/tvPass" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ed_full_name"
+            android:textColor="@color/black"
             android:layout_marginTop="10dp"
+            android:text="@string/ed_full_name"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPass"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvPass" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvFullNameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
             android:text=""
             android:textSize="20sp"
-            android:layout_marginEnd="20dp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="@id/guidelineInfo"
-            app:layout_constraintTop_toTopOf="@id/tvFullName"/>
+            app:layout_constraintTop_toTopOf="@id/tvFullName" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ed_age"
             android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:text="@string/ed_age"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFullName"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvAgeValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
             android:text=""
             android:textSize="20sp"
-            android:layout_marginEnd="20dp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="@id/guidelineInfo"
-            app:layout_constraintTop_toTopOf="@id/tvAge"/>
+            app:layout_constraintTop_toTopOf="@id/tvAge" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -283,11 +312,11 @@
             android:layout_height="wrap_content"
             android:text="@string/again"
             android:textAllCaps="false"
-            android:textStyle="italic"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

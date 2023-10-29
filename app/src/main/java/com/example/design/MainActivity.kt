@@ -1,13 +1,16 @@
 package com.example.design
 
 import android.os.Bundle
+import android.text.InputType
 import android.text.TextUtils
 import android.util.Patterns
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.design.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var firstName: EditText
     private lateinit var lastName: EditText
     private lateinit var age: EditText
-    private lateinit var info: Info
+    private var info: Info? = null
+    private var passwordVisibility = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "first name Error", Toast.LENGTH_LONG).show()
             }else {
 
-                val info = Info(
+                info = Info(
                     email = email.text.toString(),
                     userName = userName.text.toString(),
                     password = password.text.toString(),
@@ -62,11 +66,11 @@ class MainActivity : AppCompatActivity() {
                 binding.constraintInputs.isVisible = false
                 binding.constraintInfo.isVisible = true
 
-                binding.tvEmailValue.text = info.email
-                binding.tvUserNameValue.text = info.userName
-                binding.tvPassValue.text = info.password
-                binding.tvFullNameValue.text = info.firstName + " " + info.lastName
-                binding.tvAgeValue.text = info.age
+                binding.tvEmailValue.text = info?.email
+                binding.tvUserNameValue.text = info?.userName
+                binding.tvPassValue.text = info?.password
+                binding.tvFullNameValue.text = info?.firstName + " " + info?.lastName
+                binding.tvAgeValue.text = info?.age
 
             }
         }
@@ -86,21 +90,25 @@ class MainActivity : AppCompatActivity() {
             binding.constraintInputs.isVisible = true
             binding.constraintInfo.isVisible = false
 
-            Info(
-                email = "",
-                userName = "",
-                password = "",
-                firstName = "",
-                lastName = "",
-                age = ""
-            )
-
             email.text.clear()
             userName.text.clear()
             password.text.clear()
             firstName.text.clear()
             lastName.text.clear()
             age.text.clear()
+
+        }
+
+        binding.imgBtnShowPass.setOnClickListener {
+            if (!passwordVisibility) {
+                binding.edPass.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                passwordVisibility = true
+            }else {
+                binding.edPass.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                passwordVisibility = false
+            }
+
+
 
         }
 
