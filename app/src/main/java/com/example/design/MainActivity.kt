@@ -45,13 +45,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSave.setOnClickListener {
             if (!isValidEmail(email.text)) {
-                Toast.makeText(this, "User Email Error!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Enter your email correctly", Toast.LENGTH_LONG).show()
             } else if (!isValidUserName(userName.text.toString())) {
-                Toast.makeText(this, "user name Error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Username must be at least 10 characters long", Toast.LENGTH_LONG).show()
             }else if (!isStrongPassword(password.text.toString())) {
-                Toast.makeText(this, "Password Error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Invalid password format. (Xxxx123@)", Toast.LENGTH_LONG).show()
             }else if (firstName.text.isBlank() || lastName.text.isBlank() || age.text.isBlank()) {
-                Toast.makeText(this, "first name Error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_LONG).show()
             }else {
 
                 info = Info(
